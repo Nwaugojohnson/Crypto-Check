@@ -44,7 +44,7 @@ const DashBoard = () => {
 
     {/* Hero content */}
     <div className="relative z-10 max-w-[2000px] w-full flex flex-col items-center justify-center text-center gap-6 px-4 lg:ml-[-47rem] mb-5 lg:mb-30">
-      <h1 className="lg:text-[4rem] text-[3.5rem] text-center lg:text-left font-bold leading-tight text-white mt-[2rem] ">
+      <h1 className="lg:text-[4rem] text-[3.1rem] text-center lg:text-left font-bold leading-tight text-white mt-[2rem] ">
         Largest Crypto
         <br />
         Marketplace
@@ -58,7 +58,7 @@ const DashBoard = () => {
 
       <form
         onSubmit={searchHandler}
-        className="relative z-10 flex items-center w-full max-w-[400px] bg-white rounded-md p-2 text-[16px] gap-3 mt-[1rem] ml-0 lg:ml-[-5rem]"
+        className="relative z-10 flex items-center w-full max-w-[400px] bg-white rounded-md p-2 text-[16px] gap-3 mt-[1rem] ml-auto lg:ml-[-5rem]"
       >
         <input
           onChange={inputHandler}
@@ -69,7 +69,7 @@ const DashBoard = () => {
         />
         <button
           type="submit"
-          className="bg-blue-950 text-white text-[16px] px-6 py-2 rounded-md cursor-pointer"
+          className="bg-blue-950 text-white text-[13px] px-6 py-2 rounded-md cursor-pointer"
         >
           Search
         </button>
