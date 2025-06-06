@@ -10,8 +10,7 @@ const LoginButton = () => {
     <div>
       <button
         onClick={() => loginWithRedirect()}
-        className="text-center px-6 py-2 font-medium text-gray-900 hover:bg-orange-400 hover:text-white cursor-pointer"
-      >
+         className="cursor-pointer">
         LogIn
       </button>
     </div>

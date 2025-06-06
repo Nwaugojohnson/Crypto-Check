@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 import { Menu, X, User } from "lucide-react"; // import User icon
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -66,10 +67,10 @@ const Navbar = () => {
               {/* <span className="font-bold text-[1rem]">User</span> */}
             </button>
             {userMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white text-blue-950 shadow-lg rounded-md w-32 z-50">
+              <div className="absolute top-[59px] left-[-2.5rem] hover:bg-blue-900 bg-white text-blue-950 hover:text-white shadow-lg w-32 rounded-4xl ">
                 <ul className="py-2 text-sm">
                   {!isAuthenticated ? (<li
-                    className="px-4 py-2 cursor-pointer"
+                    className="px-4 py-2"
                     onClick={() => {
                       setUserMenuOpen(false);
                     }}
@@ -77,10 +78,11 @@ const Navbar = () => {
                     <LoginButton />
                   </li>) :
                   (<li
-                    className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+                    className="px-4 py-2 "
                     onClick={handleLogout}
                   >
-                    Logout
+                    <LogoutButton />
+                    {/* Logout */}
                   </li>)}
                 </ul>
               </div>
@@ -91,7 +93,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-[10%] pb-4">
+        <div className="md:hidden px-[10%] pb-4 mb-15">
           <ul className="flex flex-col gap-4 items-center">
             <NavLink to="/" onClick={() => setOpen(false)}>
               <li className="cursor-pointer hover:border-b font-bold transition-all">
@@ -114,35 +116,39 @@ const Navbar = () => {
               </li>
             </NavLink>
 
+           
             {/* User menu in mobile */}
             <div className="pt-2 text-center">
-              <div
-                onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="flex items-center gap-2 cursor-pointer"
-              >
-                <User size={50}  className="bg-blue-800 rounded-full p-[0.8rem]"/>
-                {/* <span>User</span> */}
-              </div>
-              {userMenuOpen && (
-                <ul className="mt-2 bg-white text-blue-950 rounded-md shadow-md">
-                  <li
-                    className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+          <div className="relative text-center">
+            <button
+              onClick={() => setUserMenuOpen(!userMenuOpen)}
+              className="flex items-center gap-2 cursor-pointer hover:opacity-80"
+            >
+              <User size={50} className="bg-blue-800 rounded-full p-[0.8rem] " />
+            </button>
+            {userMenuOpen && (
+              <div className="absolute top-[59px] left-[-2.5rem] hover:bg-blue-900 bg-white text-blue-950 hover:text-white shadow-lg w-32 rounded-4xl ">
+                <ul className="py-2 text-sm">
+                  {!isAuthenticated ? (<li
+                    className="px-4 py-2"
                     onClick={() => {
                       setUserMenuOpen(false);
-                      navigate("/login");
                     }}
                   >
-                    Login
-                  </li>
-                  <li
-                    className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+                    <LoginButton />
+                  </li>) :
+                  (<li
+                    className="px-4 py-2 "
                     onClick={handleLogout}
                   >
-                    Logout
-                  </li>
+                    <LogoutButton />
+                    {/* Logout */}
+                  </li>)}
                 </ul>
-              )}
-            </div>
+              </div>
+            )}
+          </div>
+        </div>
           </ul>
         </div>
       )}

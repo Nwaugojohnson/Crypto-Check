@@ -65,7 +65,7 @@ const DashBoard = () => {
           value={input}
           type="text"
           placeholder="Search crypto"
-          className="flex-1 text-[16px] outline-none border-none pl-2 text-black  "
+          className="flex-1 text-[16px] outline-none border-none pl-2 text-black w-30  "
         />
         <button
           type="submit"

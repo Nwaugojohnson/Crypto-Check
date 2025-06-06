@@ -8,8 +8,8 @@ const LogoutButton = () => {
 
   return (
        <div>
-       <button onClick={()=>  logout({ logoutButtonParams: { returnTo: `http://localhost:5173`}})}>
-        LogOut
+       <button onClick={()=>  logout({ logoutButtonParams: { returnTo: `http://localhost:5173`}})} className="cursor-pointer">
+        Logout
        </button>
     </div>
     )

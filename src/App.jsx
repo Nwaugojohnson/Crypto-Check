@@ -38,7 +38,7 @@ const App = () => {
       <RouterProvider router={router} />
       {/* <Hero /> */}
 
-      <LogoutButton />
+      {/* <LogoutButton /> */}
       <Footer />
     </main>
   );

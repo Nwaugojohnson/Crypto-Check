@@ -14,7 +14,7 @@ const Home = () => {
           {/* Hero text */}
           <div className="flex-1 mb-[2rem]">
             {/* batch text */}
-            <div className="bg-white/10 mb-6 rounded-full py-[-1] max-w-[395px] lg:w-[72%] w-[102%] flex items-center justify-center ">
+            <div className="bg-white/10 mb-6 rounded-full py-[-1] max-w-[895px] lg:w-[72%] w-[115%] flex items-center justify-center ml-[-1.5rem] px-[-2px] lg:px-0 lg:mr-0 lg:ml-0">
               <PromoBanner />
             </div>
             {/* tittle */}
